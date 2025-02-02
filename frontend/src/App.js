@@ -1,41 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import SearchBar from './SearchBar';
-
-function Home() {
-  return <h1>Home Page</h1>;
-}
-
-function Search() {
-  const [results, setResults] = useState([]);
-
-  const handleSearch = (query) => {
-    // Nanti kita akan mengambil data dari TMDB API di sini
-    console.log('Mencari:', query);
-  };
-
-  return (
-    <div>
-      <h1>Search Page</h1>
-      <SearchBar onSearch={handleSearch} />
-      <ul>
-        {results.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+import Home from './Home';
+import Search from './Search';
+import Login from './Login';
+import Register from './Register';
 
 function App() {
   return (
     <div>
       <nav>
-        <Link to="/">Home</Link> | <Link to="/search">Search</Link>
+        <Link to="/">Home</Link> | <Link to="/search">Search</Link> | <Link to="/login">Login</Link> | <Link to="/register">Register</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );
