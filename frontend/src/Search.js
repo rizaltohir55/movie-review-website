@@ -6,7 +6,7 @@ function Search() {
   const [results, setResults] = useState([]);
 
   const handleSearch = async (query) => {
-    const apiKey = 'e098bfa2a14b20d51b2959db506702d1'; // Ganti dengan API Key Anda
+    const apiKey = 'MASUKKAN_API_KEY_ANDA_DI_SINI'; // Ganti dengan API Key Anda
     const response = await axios.get('https://api.themoviedb.org/3/search/movie', {
       params: {
         api_key: apiKey,
